@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8">
+   <title>Мой блог</title>
+   <link rel="stylesheet" href="{% static 'css/diary.css' %}">
+</head>
+<body>
+   <h1><a href="/">Привет, читатель!</a></h1>
+ 
+   {% block content %}{% endblock %}
+</body>
+</html>
