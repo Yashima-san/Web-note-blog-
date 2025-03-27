@@ -1,9 +1,18 @@
 * {
-    box-sizing: border-box;
+   display: flexbox;
+   box-sizing: border-box;
  }
  body {
-    font-family: sans-serif;
-    font-size: 18px;
+   background-color: #ffe3ca;
+   color: rgb(90, 1, 1);
+   font-family: sans-serif;
+   font-size: 18px;
+ }
+ header{
+   padding: 10px;
+   background-color: rgb(255, 157, 83);
+   margin-bottom: 10px;
+   border-radius: 5px;
  }
  a {
     color: inherit;
@@ -29,11 +38,14 @@
  }
   
  h2 {
-    background-color: aquamarine;
+    background-color: rgb(183, 90, 53);
  }
-  
+.block{
+   width: 100%;
+}
  .mark {
-    background-color: gainsboro;
+    background-color: rgb(255, 162, 122);
+   border-radius: 5px;
  }
  .mark a {
     text-decoration: none;
@@ -48,7 +60,7 @@
     padding-left: 1rem;
     line-height: 1.3em;
     max-width: 36rem;
-    color: dimgray;
+    color: rgb(151, 86, 0);
  }
  em {
     font-style: normal;
@@ -78,17 +90,24 @@
   
  button,
  input[type="submit"] {
-    margin: 0 1rem 2px 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    min-width: 8rem;
+   margin: 0 1rem 2px 1rem;
+   cursor: pointer;
+   font-weight: bold;
+   min-width: 8rem;
+   background-color: bisque;
+   box-shadow: #c56614;
+   color: rgb(105, 60, 0);
+   border-color: #c56614;
+   border-radius: 5px;
  }
   
  /* Добавим отдельный стиль оформления для записей, которые сделаны в выходные дни. */
  .Saturday,
  .Sunday {
-    background-color: lightsalmon;
+    background-color: rgb(255, 204, 122);
+   border-radius: 5px;
  }
  form#post{
    width: 100% solid rgb(176, 255, 229);
+   border-radius: 5px;
  }

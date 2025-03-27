@@ -3,7 +3,7 @@
    <form method="post">
          {% csrf_token %}
        {{ form.as_p }} 
-       <input type="submit" value="Сохранить">
+       <input id="bt" type="submit" value="Сохранить">
    </form>
    {% if entry %}
        <a href="{% url 'entry-detail' entry.id %}">

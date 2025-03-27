@@ -3,11 +3,12 @@
 <head>
    <meta charset="UTF-8">
    <title>Мой блог</title>
-   <link rel="stylesheet" href="{% static 'css/diary.css' %}">
+   <link rel="stylesheet" href="{% static 'css/diary_blog.css' %}">
 </head>
 <body>
-   <h1><a href="/">Добро пожаловать в мой блог, читатель!</a></h1>
- 
+   <header>
+      <h1><a href="/">Добро пожаловать в мой блог, читатель!</a></h1>
+   </header>
    {% block content %}{% endblock %}
 </body>
 </html>
