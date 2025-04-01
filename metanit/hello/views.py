@@ -1,22 +1,16 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseForbidden, HttpResponseBadRequest
+from django.http import HttpResponse
  
+# установка куки
+def set(request):
+    # получаем из строки запроса имя пользователя
+    username = request.GET.get("username", "Undefined")
+    response = HttpResponse(f"Hello {username}")
+    # передаем его в куки
+    response.set_cookie("username", username)
+    return response
  
-def index(request, id):
-    people = ["Tom", "Bob", "Sam"]
-    # если пользователь найден, возвращаем его
-    if id in range(0, len(people)):
-        return HttpResponse(people[id])
-    # если нет, то возвращаем ошибку 404
-    else:
-        return HttpResponseNotFound("Not Found")
- 
-def access(request, age):
-    # если возраст НЕ входит в диапазон 1-110, посылаем ошибку 400
-    if age not in range(1, 111):
-        return HttpResponseBadRequest("Некорректные данные")
-    # если возраст больше 17, то доступ разрешен
-    if(age > 17):
-        return HttpResponse("Доступ разрешен")
-    # если нет, то возвращаем ошибку 403
-    else:
-        return HttpResponseForbidden("Доступ заблокирован: недостаточно лет")
+# получение куки
+def get(request):
+    # получаем куки с ключом username
+    username = request.COOKIES["username"]
+    return HttpResponse(f"Hello {username}")
