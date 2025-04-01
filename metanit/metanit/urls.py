@@ -1,12 +1,13 @@
-from django.urls import path, re_path
+from django.urls import path, include
 from hello import views
  
+product_patterns = [
+    path("", views.products),
+    path("comments", views.comments),
+    path("questions", views.questions),
+]
+ 
 urlpatterns = [
-    path('', views.index),
-    path("user/<name>", views.user),
-    re_path(r"^user/(?P<name>\D+)/(?P<age>\d+)", views.user),
-    re_path(r"^user/(?P<name>\D+)", views.user),
-    re_path(r"^user", views.user),
-    path('about/', views.about, kwargs={"name": "Tom", "age": 38}),  # Добавить слеш здесь
-    path('contact/', views.contact),  # Также добавляем слеш для контактов
+    path("", views.index),
+    path("products/<int:id>/", include(product_patterns)),
 ]
